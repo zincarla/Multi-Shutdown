@@ -1,0 +1,55 @@
+﻿<Window x:Class="Multi_Shutdown.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SettingsWindow" Height="435" Width="234" MinHeight="252" MaxWidth="450" MinWidth="234" MaxHeight="435" Icon="/Multi-Shutdown;component/Images/Shutdown.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="361*" />
+            <RowDefinition Height="23" />
+        </Grid.RowDefinitions>
+        <Button Content="Save" HorizontalAlignment="Left" Name="saveButton" Width="75" Height="23" VerticalAlignment="Bottom" Grid.Row="1" Click="saveButton_Click" />
+        <Button Content="Cancel" Name="cancelButton" HorizontalAlignment="Right" Width="75" Height="23" VerticalAlignment="Bottom" Grid.Row="1" Click="cancelButton_Click" />
+        <WrapPanel Name="wrapPanel1">
+            <GroupBox Header="General" Height="75" Name="groupBox1" Width="212">
+                <Grid>
+                    <CheckBox Content="Show confirmation dialog" Height="16" HorizontalAlignment="Left" Margin="2,2,0,0" Name="showConfirmCB" ToolTip="Prevents accidental shutdowns/restarts" VerticalAlignment="Top" />
+                    <Label Content="Command timeout" Height="28" HorizontalAlignment="Left" Margin="-2,18,0,0" Name="label1" VerticalAlignment="Top" ToolTip="Time until a command is assumed to have failed." />
+                    <TextBox Height="23" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="109,20,0,0" Name="commandTimeoutTB" Text="600" VerticalAlignment="Top" Width="44" />
+                    <Label Content="(s)" Height="28" HorizontalAlignment="Left" Margin="150,17,0,0" Name="label6" VerticalAlignment="Top" ToolTip="Seconds" />
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Ping" Height="78" Name="groupBox3" Width="212">
+                <Grid>
+                    <Label Content="Ping interval" Height="28" HorizontalAlignment="Left" Margin="-1,0,0,0" Name="label3" ToolTip="Delay between each ping check" VerticalAlignment="Top" />
+                    <Label Content="Ping timeout" Height="25" HorizontalAlignment="Left" Margin="-1,26,0,0" Name="label5" ToolTip="The delay to wait for a response packet" VerticalAlignment="Top" />
+                    <TextBox Height="23" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="76,3,0,0" Name="pingIntervalTB" Text="5" VerticalAlignment="Top" Width="48" />
+                    <TextBox Height="23" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="76,28,0,0" Name="pingTimeoutTB" Text="1000" VerticalAlignment="Top" Width="48" />
+                    <Label Content="(s)" Height="28" HorizontalAlignment="Left" Margin="122,1,0,0" Name="label7" ToolTip="Seconds" VerticalAlignment="Top" />
+                    <Label Content="(ms)" Height="28" HorizontalAlignment="Left" Margin="122,26,0,0" Name="label10" ToolTip="Milliseconds (.001 seconds)" VerticalAlignment="Top" />
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Restart" Height="109" Name="groupBox4" Width="212">
+                <Grid>
+                    <CheckBox Content="Force" Height="16" HorizontalAlignment="Left" Margin="2,3,0,0" Name="forceRestartCB" VerticalAlignment="Top" ToolTip="Ignore programs that attempt to delay the command." />
+                    <Label Content="Delay" Height="25" HorizontalAlignment="Left" Margin="-3,16,0,0" Name="label2" VerticalAlignment="Top" ToolTip="Delay before computer restarts and also the length of time the message is shown." />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="35,18,0,0" Name="delayRestartTB" Text="60" VerticalAlignment="Top" Width="40" />
+                    <CheckBox Content="Show the following message" Height="16" HorizontalAlignment="Left" Margin="2,43,0,0" Name="showRestartMsgCB" VerticalAlignment="Top" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="2,61,0,0" Name="restartMsgTB" Text="Your message here." VerticalAlignment="Top" Width="182" />
+                    <Label Content="(s)" Height="28" HorizontalAlignment="Left" Margin="73,16,0,0" Name="label8" ToolTip="Seconds" VerticalAlignment="Top" />
+                    <Label Content="?" FlowDirection="LeftToRight" Height="28" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Margin="0,0,0,0" Name="HelpMSG2" VerticalAlignment="Bottom" Width="18" MouseLeftButtonUp="HelpMSG_MouseLeftButtonUp" />
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Shutdown" Height="109" Name="groupBox2" Width="212">
+                <Grid>
+                    <CheckBox Content="Force" Height="16" HorizontalAlignment="Left" Margin="2,3,0,0" Name="forceShutdownCB" VerticalAlignment="Top" ToolTip="Ignore programs that attempt to delay the command." />
+                    <Label Content="Delay" Height="25" HorizontalAlignment="Left" Margin="-3,16,0,0" Name="label4" VerticalAlignment="Top" ToolTip="Delay before computer shutsdown and also the length of time the message is shown." />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="35,18,0,0" Name="delayShutdownTB" Text="60" VerticalAlignment="Top" Width="40" />
+                    <CheckBox Content="Show the following message" Height="16" HorizontalAlignment="Left" Margin="2,43,0,0" Name="showShutdownMsgCB" VerticalAlignment="Top" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="2,61,0,0" Name="shutdownMsgTB" Text="Your message here." VerticalAlignment="Top" Width="182" />
+                    <Label Content="(s)" Height="28" HorizontalAlignment="Left" Margin="72,16,0,0" Name="label9" ToolTip="Seconds" VerticalAlignment="Top" />
+                    <Label Content="?" Name="HelpMSG" HorizontalAlignment="Right" Width="18" FlowDirection="LeftToRight" HorizontalContentAlignment="Right" Margin="0,0,0,0" Height="28" VerticalAlignment="Bottom" MouseLeftButtonUp="HelpMSG_MouseLeftButtonUp" />
+                </Grid>
+            </GroupBox>
+        </WrapPanel>
+    </Grid>
+</Window>

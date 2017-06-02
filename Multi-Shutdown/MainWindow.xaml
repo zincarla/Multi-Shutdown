@@ -1,0 +1,66 @@
+﻿<Window x:Class="Multi_Shutdown.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Multi-Shutdown" Height="329" Width="520" xmlns:my="clr-namespace:Multi_Shutdown" MinWidth="520" MinHeight="110" Icon="/Multi-Shutdown;component/Images/Shutdown.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21" />
+            <RowDefinition Height="227*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="168*" />
+            <ColumnDefinition Width="168*" />
+            <ColumnDefinition Width="168*" />
+        </Grid.ColumnDefinitions>
+        <Menu Name="menuStrip" Height="23" VerticalAlignment="Top" Grid.ColumnSpan="3">
+            <MenuItem Name="fileMenuButton" Header="File">
+                <MenuItem Name="exitButton" Header="Exit" Click="Exit_Click" />
+            </MenuItem>
+            <MenuItem Name="editMenuButton" Header="Edit">
+                <MenuItem Name="nodesButton" Header="Nodes" Click="nodesButton_Click" />
+                <MenuItem Name="settingsButton" Header="Settings" Click="settingsButton_Click" />
+                <MenuItem Name="shutdownMenuButtom" Header="Shutdown">
+                    <MenuItem Name="shutdownAll" Header="All" Click="shutdownAll_Click" />
+                    <MenuItem Name="shutdownCritical" Header="Critical Only" Click="shutdownCritical_Click" />
+                    <MenuItem Name="shutdownHigh" Header="High Only" Click="shutdownHigh_Click" />
+                    <MenuItem Name="shutdownNonCritical" Header="Non-Critical Only" Click="shutdownNonCritical_Click" />
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Name="aboutButton" Header="About" Click="About_Click" />
+            </MenuItem>
+        </Menu>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <WrapPanel Name="nonCriticalPanel">
+                <WrapPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0" />
+                        <GradientStop Color="#FFD0D0D0" Offset="1" />
+                    </LinearGradientBrush>
+                </WrapPanel.Background>
+            </WrapPanel>
+        </ScrollViewer>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Row="1" Grid.Column="1" Margin="4,0,0,0" VerticalScrollBarVisibility="Auto">
+            <WrapPanel Name="highPanel">
+                <WrapPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0" />
+                        <GradientStop Color="#FFCACAFF" Offset="1" />
+                    </LinearGradientBrush>
+                </WrapPanel.Background>
+            </WrapPanel>
+        </ScrollViewer>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Column="2" Margin="4,0,0,0" Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <WrapPanel Name="criticalPanel">
+                <WrapPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0" />
+                        <GradientStop Color="#FFCCFFCC" Offset="1" />
+                    </LinearGradientBrush>
+                </WrapPanel.Background>
+            </WrapPanel>
+        </ScrollViewer>
+        <GridSplitter HorizontalAlignment="Left" Margin="0,21,0,0" Name="gridSplitter1" Width="4" ResizeDirection="Columns" Grid.Column="1" Grid.RowSpan="2" />
+        <GridSplitter Name="gridSplitter2" Grid.Column="2" Margin="0,21,0,0" Width="4" ResizeDirection="Columns" HorizontalAlignment="Left" Grid.RowSpan="2" />
+    </Grid>
+</Window>
