@@ -16,7 +16,7 @@ using System.Windows.Threading;
 namespace Multi_Shutdown
 {
     /// <summary>
-    /// Interaction logic for InfoLight.xaml
+    /// Interaction logic for InfoLight.xaml. This custom control is intended to resemble a light on the control panel.
     /// </summary>
     public partial class InfoLight : UserControl
     {

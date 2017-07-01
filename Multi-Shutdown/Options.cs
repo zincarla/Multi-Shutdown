@@ -9,6 +9,9 @@ using System.Windows;
 
 namespace Multi_Shutdown
 {
+    /// <summary>
+    /// Maintains, loads, and saves the various customizable options for this application.
+    /// </summary>
     static public class Options
     {
         static List<MachineInfo> machines = new List<MachineInfo>();

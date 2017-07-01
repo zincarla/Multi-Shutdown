@@ -9,6 +9,7 @@ using System.Reflection;
 
 namespace Multi_Shutdown
 {
+    //Cache of image utilized by application
     public static class ImageResources
     {
         static BitmapImage onLight = null;

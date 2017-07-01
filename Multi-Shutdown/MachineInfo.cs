@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Multi_Shutdown
 {
+    /// <summary>
+    /// Maintains information on a single machine.
+    /// </summary>
     public class MachineInfo
     {
         public bool Active { get; set; }

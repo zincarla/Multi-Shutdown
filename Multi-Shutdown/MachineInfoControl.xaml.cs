@@ -19,6 +19,7 @@ namespace Multi_Shutdown
 {
     /// <summary>
     /// Interaction logic for machineInfoControl.xaml
+    /// This custom control represents a single monitored machine.
     /// </summary>
     public partial class MachineInfoControl : UserControl
     {

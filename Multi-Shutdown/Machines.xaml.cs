@@ -15,6 +15,7 @@ namespace Multi_Shutdown
 {
     /// <summary>
     /// Interaction logic for Machines.xaml
+    /// Form used to customize which machines are to be monitored and in what order they should be shutdown in if called for.
     /// </summary>
     public partial class MachinesWindow : Window
     {
